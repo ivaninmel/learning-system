@@ -1,0 +1,10 @@
+{
+  "name": "learning-system-bili-window",
+  "private": true,
+  "scripts": {
+    "bili": "electron electron_bili/main.js"
+  },
+  "devDependencies": {
+    "electron": "^43.4.0"
+  }
+}

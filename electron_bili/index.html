@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>B站专注学习</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f7f4; color: #24483d; font: 14px "Microsoft YaHei", sans-serif; }
+    header { height: 74px; padding: 13px 18px; display: flex; gap: 10px; align-items: center; border-bottom: 1px solid #d4e3da; }
+    .brand { font-weight: 700; white-space: nowrap; } input { flex: 1; padding: 10px 12px; border: 1px solid #c5d8cf; border-radius: 8px; font: inherit; }
+    button { padding: 10px 14px; border: 0; border-radius: 8px; background: #3d7564; color: white; font: inherit; cursor: pointer; }
+    button.secondary { background: #edf4f0; color: #315a4e; border: 1px solid #c5d8cf; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="brand">B站专注学习</span>
+    <input id="search" placeholder="搜索学习内容，例如：小学奥数讲解">
+    <button id="searchButton">纯净搜索</button>
+    <button id="openButton" class="secondary">打开链接</button>
+    <button id="endButton" class="secondary">结束学习</button>
+  </header>
+  <script>
+    const input = document.getElementById('search');
+    document.getElementById('searchButton').onclick = () => window.learning.search(input.value);
+    document.getElementById('openButton').onclick = () => window.learning.openUrl(input.value);
+    document.getElementById('endButton').onclick = () => window.learning.endLearning();
+    input.onkeydown = (event) => { if (event.key === 'Enter') window.learning.search(input.value); };
+  </script>
+</body>
+</html>
